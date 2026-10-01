@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baby Shower de Fernanda 🌸 | Fernando & Eliana</title>
+  
+  <!-- SEO & OpenGraph Meta Tags para compartir en WhatsApp -->
+  <meta name="title" content="Baby Shower de Fernanda 🌸">
+  <meta name="description" content="¡Te invitamos a celebrar la pronta llegada de Fernanda! Fernando & Eliana te esperamos el 1 de Noviembre de 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Baby Shower de Fernanda 🌸">
+  <meta property="og:description" content="¡Acompáñanos a celebrar la llegada de nuestra bebé! Haz clic para ver los detalles e invitación.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+
+  <!-- Google Fonts & Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Canvas para animación de pétalos de flores y destellos dorados -->
+  <canvas id="petals-canvas"></canvas>
+
+  <!-- Enredaderas florales de fondo laterales -->
+  <svg class="bg-vines bg-vines-left" viewBox="0 0 160 800" preserveAspectRatio="none">
+    <path d="M15,0 Q90,180 25,380 T35,800" stroke="#f4a6bb" stroke-width="3" fill="none" />
+    <circle cx="45" cy="80" r="14" fill="#f8bbd0" />
+    <circle cx="25" cy="200" r="12" fill="#f8bbd0" />
+    <circle cx="55" cy="340" r="15" fill="#f8bbd0" />
+    <circle cx="25" cy="480" r="12" fill="#f48fb1" />
+    <circle cx="50" cy="640" r="14" fill="#f8bbd0" />
+  </svg>
+
+  <svg class="bg-vines bg-vines-right" viewBox="0 0 160 800" preserveAspectRatio="none">
+    <path d="M15,0 Q90,180 25,380 T35,800" stroke="#f4a6bb" stroke-width="3" fill="none" />
+    <circle cx="45" cy="80" r="14" fill="#f8bbd0" />
+    <circle cx="25" cy="200" r="12" fill="#f8bbd0" />
+    <circle cx="55" cy="340" r="15" fill="#f8bbd0" />
+    <circle cx="25" cy="480" r="12" fill="#f48fb1" />
+    <circle cx="50" cy="640" r="14" fill="#f8bbd0" />
+  </svg>
+
+  <!-- Contenedor Principal de la Tarjeta Digital -->
+  <main class="main-wrapper">
+    
+    <!-- ARBUSTO DE FLORES SUPERIOR (Espejo del borde floral inferior) -->
+    <img src="floral_border.png" alt="Arbusto de flores superior" class="top-floral-border-img">
+
+    <!-- Esquinas Decorativas de Enredaderas dentro de la Tarjeta -->
+    <svg class="card-corner card-corner-tl" viewBox="0 0 100 100">
+      <path d="M0,0 Q50,0 80,40 T100,100" stroke="#d8698b" stroke-width="2.5" fill="none"/>
+      <circle cx="30" cy="15" r="8" fill="#f4a6bb"/>
+      <circle cx="65" cy="35" r="10" fill="#f8bbd0"/>
+    </svg>
+
+    <svg class="card-corner card-corner-tr" viewBox="0 0 100 100">
+      <path d="M0,0 Q50,0 80,40 T100,100" stroke="#d8698b" stroke-width="2.5" fill="none"/>
+      <circle cx="30" cy="15" r="8" fill="#f4a6bb"/>
+      <circle cx="65" cy="35" r="10" fill="#f8bbd0"/>
+    </svg>
+
+    <svg class="card-corner card-corner-bl" viewBox="0 0 100 100">
+      <path d="M0,0 Q50,0 80,40 T100,100" stroke="#d8698b" stroke-width="2.5" fill="none"/>
+      <circle cx="30" cy="15" r="8" fill="#f4a6bb"/>
+      <circle cx="65" cy="35" r="10" fill="#f8bbd0"/>
+    </svg>
+
+    <svg class="card-corner card-corner-br" viewBox="0 0 100 100">
+      <path d="M0,0 Q50,0 80,40 T100,100" stroke="#d8698b" stroke-width="2.5" fill="none"/>
+      <circle cx="30" cy="15" r="8" fill="#f4a6bb"/>
+      <circle cx="65" cy="35" r="10" fill="#f8bbd0"/>
+    </svg>
+
+    <!-- Mariposas flotantes animadas -->
+    <div class="butterfly butterfly-1">🦋</div>
+    <div class="butterfly butterfly-2">🦋</div>
+    <div class="butterfly butterfly-3">🦋</div>
+
+    <!-- 1. Encabezado con Cinta Decorativa -->
+    <header class="top-ribbon-container">
+      <div class="ribbon-banner">
+        <h1 class="baby-name">Fernanda</h1>
+      </div>
+      <p class="subtitle-tag">Baby Shower</p>
+    </header>
+
+    <!-- Divisor Floral -->
+    <div class="floral-divider">🌸 🌿 🌸</div>
+
+    <!-- 2. Video de la Ecografía de la Bebé con Marco Floral -->
+    <section class="ultrasound-section">
+      <div class="frame-wrapper">
+        <div class="ultrasound-video-container">
+          <video id="eco-video" autoplay loop muted playsinline class="ultrasound-video">
+            <source src="bebe_video_eco.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de video.
+          </video>
+        </div>
+        <img src="floral_wreath.png" alt="Marco Floral Decorativo" class="floral-wreath-overlay">
+      </div>
+    </section>
+
+    <!-- 3. Reproductor Interactivo de Música (Flor) -->
+    <section class="music-player-section">
+      <button id="flower-music-btn" class="flower-btn" aria-label="Reproducir canción de la bebé">
+        <div class="flower-icon-wrapper">
+          <div class="flower-pulse-ring"></div>
+          <img src="music_flower.png" alt="Flor musical animada" class="flower-img">
+        </div>
+        <span class="music-hint">✨ toca la florcita para escuchar mi canción ✨</span>
+        <span id="music-status" class="music-status-badge">🎵 Reproduciendo...</span>
+      </button>
+      
+      <!-- Audio local (bebesong.mp3 en la raíz del proyecto) -->
+      <audio id="bg-music" loop preload="auto">
+        <source src="bebesong.mp3" type="audio/mpeg">
+        Tu navegador no soporta el reproductor de audio.
+      </audio>
+    </section>
+
+    <!-- Divisor Floral -->
+    <div class="floral-divider">🌸 🌿 🌸</div>
+
+    <!-- 4. Nombres de los Padres -->
+    <section class="parents-container">
+      <h2 class="parents-names">Fernando & Eliana</h2>
+      <p class="parents-quote">¡Estamos ansiosos por llenar de amor a nuestra hermosa bebé!</p>
+    </section>
+
+    <!-- 5. Tarjeta de Fecha, Hora y Lugar -->
+    <section class="info-card">
+      <span class="card-header-badge">🌸 Detalles del Evento 🌸</span>
+      
+      <div class="date-time-grid">
+        <div class="date-box">
+          <span class="day-name">Domingo</span>
+          <span class="month-year">Noviembre</span>
+        </div>
+        
+        <div class="grid-divider"></div>
+        
+        <div class="date-box">
+          <span class="big-number">01</span>
+          <span class="month-year">2026</span>
+        </div>
+
+        <div class="grid-divider"></div>
+
+        <div class="time-box">
+          <span class="big-number" style="font-size: 2.2rem;">03:30</span>
+          <span class="month-year">PM</span>
+        </div>
+      </div>
+
+      <div class="venue-details">
+        <h3 class="venue-name">Hotel Atrium Plaza Barranquilla</h3>
+        <p class="venue-address">📍 Cra. 44 #74-85, Barranquilla</p>
+      </div>
+
+      <!-- Contador Regresivo -->
+      <div class="countdown-section">
+        <p class="countdown-title">Faltan tan solo:</p>
+        <div class="countdown-grid">
+          <div class="countdown-item">
+            <span id="cd-days" class="countdown-val">00</span>
+            <span class="countdown-label">Días</span>
+          </div>
+          <div class="countdown-item">
+            <span id="cd-hours" class="countdown-val">00</span>
+            <span class="countdown-label">Horas</span>
+          </div>
+          <div class="countdown-item">
+            <span id="cd-mins" class="countdown-val">00</span>
+            <span class="countdown-label">Min</span>
+          </div>
+          <div class="countdown-item">
+            <span id="cd-secs" class="countdown-val">00</span>
+            <span class="countdown-label">Seg</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botón Agendar Calendario -->
+      <a id="add-calendar-btn" href="#" class="btn-secondary">
+        📅 Agendar en mi Calendario
+      </a>
+    </section>
+
+    <!-- 6. Ubicación / ¿Cómo llego? -->
+    <section class="location-section">
+      <h2 class="section-title">¿Cómo llego?</h2>
+      
+      <!-- Conejito Tierno Flotante -->
+      <div class="bunny-wrapper">
+        <img src="cute_bunny.png" alt="Conejo tierno flotante sin fondo" class="bunny-illustration">
+      </div>
+
+      <p class="map-instructions">Toca el botón para ver la dirección exacta y navegar con GPS</p>
+
+      <a href="https://maps.app.goo.gl/djAHm7vw9JS3o3hM6" target="_blank" rel="noopener noreferrer" class="btn-primary">
+        📍 Abrir en Google Maps
+      </a>
+
+      <!-- Mapa interactivo empotrado -->
+      <div class="map-container" style="margin-top: 20px;">
+        <iframe 
+          title="Mapa de ubicación Hotel Atrium Plaza Barranquilla"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.480436940808!2d-74.80931552402129!3d11.002534954988017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42d76db867b93%3A0xb36f734dfeb79383!2sHotel%20Atrium%20Plaza!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco"
+          loading="lazy" 
+          allowfullscreen="">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- 7. Confirmación de Asistencia (RSVP) -->
+    <section class="rsvp-section">
+      <h2 class="section-title">Confirmación</h2>
+      <p class="rsvp-deadline">Te agradecemos nos confirmes tu valiosa asistencia</p>
+
+      <a id="rsvp-btn" href="#" class="btn-primary" style="font-size: 1.05rem;">
+        💬 Confirma tu asistencia por WhatsApp
+      </a>
+    </section>
+
+    <!-- 8. Pie de página decorativo sin fondo -->
+    <footer class="footer-section">
+      <p class="footer-quote">Tu presencia es muy importante para nosotros</p>
+      <h2 class="footer-heading">¡Te esperamos!</h2>
+      <img src="floral_border.png" alt="Borde de flores silvestre sin fondo" class="floral-footer-img">
+    </footer>
+
+  </main>
+
+  <!-- Script interactivo -->
+  <script src="script.js"></script>
+</body>
+</html>
